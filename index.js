@@ -8,8 +8,9 @@ const DEAD_COLOR = "#FFFFFF";
 const ALIVE_COLOR = "#000000";
 
 const universe = Universe.new();
-const width = Universe.width;
-const height = Universe.height;
+
+const width = universe.width();
+const height = universe.height();
 
 const canvas = document.getElementById("game-of-life-canvas");
 canvas.height = (CELL_SIZE + 1) * height + 1;
@@ -22,11 +23,13 @@ const renderLoop = () => {
 
     drawGrid();
     drawCells();
+
+    requestAnimationFrame(renderLoop);
 }
 
 const drawGrid = () => {
     ctx.beginPath();
-    ctx.strokeStile = GRID_COLOR;
+    ctx.strokeStyle = GRID_COLOR;
 
     // Vertical lines
     for (let i = 0; i <= width; i++) {
