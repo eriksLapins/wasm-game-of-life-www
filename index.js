@@ -7,7 +7,7 @@ const GRID_COLOR = "#CCCCCC";
 const DEAD_COLOR = "#FFFFFF";
 const ALIVE_COLOR = "#000000";
 
-const universe = Universe.new(window.innerWidth / CELL_SIZE - 100, window.innerHeight / CELL_SIZE - 100);
+const universe = Universe.new((window.innerWidth / 2) / CELL_SIZE, (window.innerHeight / 2) / CELL_SIZE);
 
 const width = universe.width();
 const height = universe.height();
